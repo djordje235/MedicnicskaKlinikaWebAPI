@@ -1,0 +1,6 @@
+@Medklinika_HostAddress = http://localhost:5128
+
+GET {{Medklinika_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
