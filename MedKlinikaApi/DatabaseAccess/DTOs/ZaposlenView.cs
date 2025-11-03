@@ -9,35 +9,26 @@ namespace DatabaseAccess.DTOs
 {
     public class ZaposlenView
     {
-        public int? JMBG { get; set; }
-        public DateTime? DatumZaposlenja { get; set; }
-        public String? Pozicija { get; set; }
+        public int JMBG { get; set; }
+        public DateTime DatumZaposlenja { get; set; }
+        public String Pozicija { get; set; }
 
-        public DateTime? DatumRodjenja { get; set; }
+        public DateTime DatumRodjenja { get; set; }
 
-        public String? Ime { get; set; }
+        public String Ime { get; set; }
 
-        public String? Prezime { get; set; }
+        public String Prezime { get; set; }
 
-        public String? Adresa { get; set; }
+        public String Adresa { get; set; }
 
-        public int? Smena { get; set; }
+        public int Smena { get; set; }
 
-        public LokacijaView? AdresaLokacije { get; set; }
-
-        public IList<OdeljenjeView>? Odeljenja { get; set; }
-
-        public IList<BrTelefonaZaposlenogView>? Telefons { get; set; }
-
-        public IList<EmailZaposlenogView>? Emails { get; set; }
+        //public LokacijaView AdresaLokacije { get; set; }
 
         public ZaposlenView()
         {
-            Odeljenja = new List<OdeljenjeView>();
-            Emails = new List<EmailZaposlenogView>();
-            Telefons = new List<BrTelefonaZaposlenogView>();
-        }
 
+        }
         internal ZaposlenView(Zaposlen? z)
         {
             if(z!=null)
@@ -50,7 +41,7 @@ namespace DatabaseAccess.DTOs
                 Prezime = z.Prezime;
                 Adresa = z.Adresa;
                 Smena = z.Smena;
-                AdresaLokacije = new LokacijaView(z.AdresaLokacije);
+                //AdresaLokacije = new LokacijaView(z.AdresaLokacije);
             }
 
         }

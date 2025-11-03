@@ -9,7 +9,7 @@ namespace DatabaseAccess.DTOs
 {
     public class AdministrativnoOsobljeView : ZaposlenView
     {
-        public AdministrativnoOsobljeView()
+        public AdministrativnoOsobljeView() : base()
         {
 
         }
