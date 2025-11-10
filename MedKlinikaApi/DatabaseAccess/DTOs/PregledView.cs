@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using DatabaseAccess.Entiteti;
 
@@ -9,10 +10,10 @@ namespace DatabaseAccess.DTOs
 {
     public class PregledView
     {
-        public int? IdPregleda { get; set; }
-        public DateTime? Datum { get; set; }
+        public int IdPregleda { get; set; }
+        public DateTime Datum { get; set; }
 
-        public DateTime? Vreme { get; set; }
+        public DateTime Vreme { get; set; }
 
         public String? OpisTegoba { get; set; }
 
@@ -23,16 +24,18 @@ namespace DatabaseAccess.DTOs
         public String? PreporukaZaLecenje { get; set; }
 
         public String? VrstaPregleda { get; set; }
+        [JsonIgnore]
+        public PregledView? DodatniPregled {  get; set; }
 
-
+        [JsonIgnore]
         public PacijentView? Pacijent { get; set; }
-
+        [JsonIgnore]
         public LekarView? Lekar { get; set; }
-
+        [JsonIgnore]
         public OdeljenjeView? Odeljenje { get; set; }
-
+        [JsonIgnore]
         public TerminView? Termin { get; set; }
-
+        [JsonIgnore]
         public IList<LaboratorijskaAnalizaView> LaboratorijskaAnaliza { get; set; }
 
         public PregledView() 
@@ -56,6 +59,7 @@ namespace DatabaseAccess.DTOs
                 Lekar = new LekarView(p.Lekar);
                 Odeljenje = new OdeljenjeView(p.Odeljenje);
                 Termin = new TerminView(p.Termin);
+                DodatniPregled = p.DodatniPregled != null ? new PregledView { IdPregleda = p.DodatniPregled.IdPregleda } : null;
             }
         }
 

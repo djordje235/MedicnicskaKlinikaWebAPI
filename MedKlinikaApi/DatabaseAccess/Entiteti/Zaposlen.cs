@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace DatabaseAccess.Entiteti
 {
     public abstract class Zaposlen
     {
-        public virtual int JMBG { get; set; }
+        public virtual long JMBG { get; set; }
         public virtual DateTime DatumZaposlenja { get; set; }
         public virtual String Pozicija { get; set; }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using DatabaseAccess.Entiteti;
 
@@ -9,17 +10,17 @@ namespace DatabaseAccess.DTOs
 {
     public class TerminView
     {
-        public int? IdTermina { get; set; }
-        public DateTime? Datum { get; set; }
+        public int IdTermina { get; set; }
+        public DateTime Datum { get; set; }
 
-        public DateTime? Vreme { get; set; }
-
+        public DateTime Vreme { get; set; }
+        [JsonIgnore]
         public PacijentView? Pacijent { get; set; }
-
+        [JsonIgnore]
         public LekarView? Lekar { get; set; }
-
+        [JsonIgnore]
         public OdeljenjeView? Odeljenje { get; set; }
-
+        [JsonIgnore]
         public PregledView? Pregled { get; set; }
 
         public TerminView() { }

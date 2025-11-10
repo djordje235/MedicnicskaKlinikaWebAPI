@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using DatabaseAccess.Entiteti;
 
@@ -12,9 +13,9 @@ namespace DatabaseAccess.DTOs
         public String? Adresa { get; set; }
 
         public String? RadnoVreme { get; set; }
-
+        [JsonIgnore]
         public IList<ZaposlenView>? Zaposleni { get; set; }
-
+        [JsonIgnore]
         public IList<OdeljenjeView>? Odeljenja { get; set; }
 
         public LokacijaView() 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using DatabaseAccess.Entiteti;
 
@@ -9,8 +10,8 @@ namespace DatabaseAccess.DTOs
 {
     public class PrivatnoOsiguranjeView
     {
-        public int? IdOsiguranja { get; set; }
-        public int? BrPolise { get; set; }
+        public int IdOsiguranja { get; set; }
+        public int BrPolise { get; set; }
 
         public String? OsiguravajucaKuca { get; set; }
 

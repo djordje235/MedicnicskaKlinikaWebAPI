@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseAccess.Entiteti
 {
-    internal class AdministrativnoOsoblje : Zaposlen
+    public class AdministrativnoOsoblje : Zaposlen
     {
 
     }
